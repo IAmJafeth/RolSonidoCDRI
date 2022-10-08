@@ -23,8 +23,7 @@ def getWeekDay(dayNumber):
     return daysDict[dayNumber]
     
 def getEmoji(week):
-    emojiDict = {
-        0 : "🐟",
+    emojiDict = {   
         1 : "🐠",
         2 : "🐡",
         3 : "🦈",
@@ -84,7 +83,7 @@ if menuoption == 2:
 currentMonth = todayDate.month
 currentYear = todayDate.year
 
-startDate = datetime.date(int(currentYear),int(currentMonth),2)
+startDate = datetime.date(int(currentYear),int(currentMonth),1)
 week = 1
 primerSabado = True
 primerViernes = True
@@ -93,9 +92,7 @@ print('\n\n\t----- Semana ', week,getEmoji(week),'-----\n')
 while (currentMonth == startDate.month):
     temp = pd.Timestamp(startDate)
     
-    if temp.dayofweek == 1:
-        week += 1
-        print('\t----- Semana ', week ,getEmoji(week),'-----\n')
+    dia = temp.dayofweek
 
     if temp.dayofweek == 1:
         print('ENSAYO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
@@ -123,6 +120,10 @@ while (currentMonth == startDate.month):
         print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month))
         print('8:00 am: ')
         print('10:30 am: \n')
+
+    if temp.dayofweek == 0:
+        week += 1
+        print('\t----- Semana ', week ,getEmoji(week),'-----\n')
     
     startDate += relativedelta(days=+1)
     
