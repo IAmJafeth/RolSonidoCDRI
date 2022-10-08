@@ -1,10 +1,8 @@
 from datetime import date
 import datetime
 from dateutil.relativedelta import relativedelta
-import calendar
 import pandas as pd
-import sys
-import os
+
 
 def checkIsDigit(input_str):
     if input_str.strip().isdigit():
@@ -23,6 +21,18 @@ def getWeekDay(dayNumber):
         6 : "Domingo ",
     }
     return daysDict[dayNumber]
+    
+def getEmoji(week):
+    emojiDict = {
+        0 : "🐟",
+        1 : "🐠",
+        2 : "🐡",
+        3 : "🦈",
+        4 : "🎣",
+        5 : "🦦",
+        6 : "🍥",
+    }
+    return emojiDict[week]
 
 def getMonth(monthNumber):
     monthDict = {
@@ -76,31 +86,32 @@ currentYear = todayDate.year
 
 startDate = datetime.date(int(currentYear),int(currentMonth),2)
 week = 1
-
-print('\n\n\t----- Semana ', week,'-----\n')
+primerSabado = True
+primerViernes = True
+print('\n\n\t----- Semana ', week,getEmoji(week),'-----\n')
 
 while (currentMonth == startDate.month):
     temp = pd.Timestamp(startDate)
     
-    if temp.dayofweek == 0:
+    if temp.dayofweek == 1:
         week += 1
-        print('\t----- Semana ', week,'-----\n')
-        
-    startDate += relativedelta(days=+1)
-    
+        print('\t----- Semana ', week ,getEmoji(week),'-----\n')
+
     if temp.dayofweek == 1:
         print('ENSAYO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
         
     if temp.dayofweek == 2:
         print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
     
-    if temp.dayofweek == 4 and week == 1:
+    if temp.dayofweek == 4 and primerViernes:
         print('Parejas ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:300pm: \n')
+        primerViernes = False
     
-    if temp.dayofweek == 5 and week == 1:
+    if temp.dayofweek == 5 and primerSabado:
         print('DESAYUNO MUJERES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '9:30am: \n')
         print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
-    
+        primerSabado = False
+        
     elif temp.dayofweek == 5 and week == 3:
         print('AYUNO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '8:00am: \n')
         print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
@@ -113,6 +124,7 @@ while (currentMonth == startDate.month):
         print('8:00 am: ')
         print('10:30 am: \n')
     
+    startDate += relativedelta(days=+1)
     
 
     
