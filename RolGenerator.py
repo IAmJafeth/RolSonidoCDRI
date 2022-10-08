@@ -50,12 +50,13 @@ def getMonth(monthNumber):
     }
     return monthDict[monthNumber]
 
-print('\t██████╗░░█████╗░██╗░░░░░██╗░░░░░  ░██████╗░█████╗░███╗░░██╗██╗██████╗░░█████╗░ ')
-print('\t██╔══██╗██╔══██╗██║░░░░░██║░░░░░  ██╔════╝██╔══██╗████╗░██║██║██╔══██╗██╔══██╗')
-print('\t██████╔╝██║░░██║██║░░░░░██║░░░░░  ╚█████╗░██║░░██║██╔██╗██║██║██║░░██║██║░░██║')
-print('\t██╔══██╗██║░░██║██║░░░░░██║░░░░░  ░╚═══██╗██║░░██║██║╚████║██║██║░░██║██║░░██║')
-print('\t██║░░██║╚█████╔╝███████╗███████╗  ██████╔╝╚█████╔╝██║░╚███║██║██████╔╝╚█████╔╝')
-print('\t╚═╝░░╚═╝░╚════╝░╚══════╝╚══════╝  ╚═════╝░░╚════╝░╚═╝░░╚══╝╚═╝╚═════╝░░╚════╝░\n\n')
+print(' ')
+print('\t██████╗░░█████╗░██╗░░░░░  ░██████╗░█████╗░███╗░░██╗██╗██████╗░░█████╗░')
+print('\t██╔══██╗██╔══██╗██║░░░░░  ██╔════╝██╔══██╗████╗░██║██║██╔══██╗██╔══██╗')
+print('\t██████╔╝██║░░██║██║░░░░░  ╚█████╗░██║░░██║██╔██╗██║██║██║░░██║██║░░██║')
+print('\t██╔══██╗██║░░██║██║░░░░░  ░╚═══██╗██║░░██║██║╚████║██║██║░░██║██║░░██║')
+print('\t██║░░██║╚█████╔╝███████╗  ██████╔╝╚█████╔╝██║░╚███║██║██████╔╝╚█████╔╝')
+print('\t╚═╝░░╚═╝░╚════╝░╚══════╝  ╚═════╝░░╚════╝░╚═╝░░╚══╝╚═╝╚═════╝░░╚════╝░\n\n')
 
 
 
@@ -95,31 +96,31 @@ while (currentMonth == startDate.month):
     dia = temp.dayofweek
 
     if temp.dayofweek == 1:
-        print('ENSAYO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('ENSAYO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido: \n')
         
     if temp.dayofweek == 2:
-        print('NOCHE ADORACION ' +getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('NOCHE ADORACION ' +getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido:   Multimedia: \n')
     
     if temp.dayofweek == 4 and primerViernes:
-        print('Parejas ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:300pm: \n')
+        print('Parejas ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:30pm | Sonido:  \n')
         primerViernes = False
     
     if temp.dayofweek == 5 and primerSabado:
-        print('DESAYUNO MUJERES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '9:30am: \n')
-        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('DESAYUNO MUJERES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '9:30am | Sonido:  \n')
+        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido:  \n')
         primerSabado = False
         
     elif temp.dayofweek == 5 and week == 3:
-        print('AYUNO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '8:00am: \n')
-        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('AYUNO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '8:00am  | Sonido:  \n')
+        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido:  \n')
         
     elif temp.dayofweek == 5:
-        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido:  \n')
         
     if temp.dayofweek == 6:
         print('CULTO FAMILIAR ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month))
-        print('8:00 am: ')
-        print('10:30 am: \n')
+        print('8:00 am | Sonido:   Multimedia:  ')
+        print('10:30 am | Sonido:   Multimedia:  \n')
 
     if temp.dayofweek == 0:
         week += 1
