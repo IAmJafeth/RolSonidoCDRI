@@ -98,7 +98,7 @@ while (currentMonth == startDate.month):
         print('ENSAYO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
         
     if temp.dayofweek == 2:
-        print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('NOCHE ADORACION ' +getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
     
     if temp.dayofweek == 4 and primerViernes:
         print('Parejas ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:300pm: \n')
@@ -106,18 +106,18 @@ while (currentMonth == startDate.month):
     
     if temp.dayofweek == 5 and primerSabado:
         print('DESAYUNO MUJERES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '9:30am: \n')
-        print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
         primerSabado = False
         
     elif temp.dayofweek == 5 and week == 3:
         print('AYUNO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '8:00am: \n')
-        print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
         
     elif temp.dayofweek == 5:
-        print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
+        print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm: \n')
         
     if temp.dayofweek == 6:
-        print(getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month))
+        print('CULTO FAMILIAR ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month))
         print('8:00 am: ')
         print('10:30 am: \n')
 
