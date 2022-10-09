@@ -50,6 +50,11 @@ def getMonth(monthNumber):
     }
     return monthDict[monthNumber]
 
+def getSonidista(num):
+    sonDict = {
+        
+    }
+
 print(' ')
 print('\t██████╗░░█████╗░██╗░░░░░  ░██████╗░█████╗░███╗░░██╗██╗██████╗░░█████╗░')
 print('\t██╔══██╗██╔══██╗██║░░░░░  ██╔════╝██╔══██╗████╗░██║██║██╔══██╗██╔══██╗')
@@ -61,6 +66,7 @@ print('\t╚═╝░░╚═╝░╚════╝░╚══════�
 
 
 while(True):
+    
     print('¿Quíeres generar la tabla del mes siguiente o el actual?')
     print('-->      1-Mes Actual       2-Mes Siguiente   <--')
 
@@ -70,12 +76,9 @@ while(True):
         menuoption = int(menuoption)
         if(menuoption == 1 or menuoption == 2):
             break
-        else:
-            print('> INPUT ERROR: Select a valid number (1,2) <')
-            print('\n----------------------------------------- ')
-    else:
-        print('> INPUT ERROR: Select a valid number (1,2) <')
-        print('\n----------------------------------------- ')
+        
+    print('> INPUT ERROR: Select a valid number (1,2) <')
+    print('\n----------------------------------------- ')
 
 todayDate = date.today()
 if menuoption == 2:
