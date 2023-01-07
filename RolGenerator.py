@@ -89,6 +89,7 @@ currentYear = todayDate.year
 
 startDate = datetime.date(int(currentYear),int(currentMonth),1)
 week = 1
+counterSabado = 0
 primerSabado = True
 primerViernes = True
 print('\n\n\t----- Semana ', week,getEmoji(week),'-----\n')
@@ -113,8 +114,8 @@ while (currentMonth == startDate.month):
         print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido:  \n')
         primerSabado = False
         
-    elif temp.dayofweek == 5 and week == 3:
-        print('AYUNO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '8:00am  | Sonido:  \n')
+    elif temp.dayofweek == 5 and counterSabado == 2:
+        print('AYUNO ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '9:30am  | Sonido:  \n')
         print('RED JOVENES ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month) + '6:00pm | Sonido:  \n')
         
     elif temp.dayofweek == 5:
@@ -122,12 +123,15 @@ while (currentMonth == startDate.month):
         
     if temp.dayofweek == 6:
         print('CULTO FAMILIAR ' + getWeekDay(temp.dayofweek) + str(startDate.day) + ' de' + getMonth(startDate.month))
-        print('8:00 am | Sonido:   Multimedia:  ')
+        print('7:30 am | Sonido:   Multimedia:  ')
         print('10:30 am | Sonido:   Multimedia:  \n')
 
     if temp.dayofweek == 0:
         week += 1
         print('\t----- Semana ', week ,getEmoji(week),'-----\n')
+
+    if temp.dayofweek == 5:
+        counterSabado += 1
     
     startDate += relativedelta(days=+1)
     
